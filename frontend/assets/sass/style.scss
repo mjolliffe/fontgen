@@ -1,0 +1,26 @@
+/* universal */
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin-top: 50px;
+}
+
+.button {
+  text-decoration: none;
+  border: none;
+  color: white;
+  padding: 5px;
+  margin: 10px 0px;
+}
+
+.randomize {
+  background-color: blue;
+}
+
+.save {
+  background-color: green;
+}

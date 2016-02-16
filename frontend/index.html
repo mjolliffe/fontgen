@@ -13,18 +13,19 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-  <!-- jquery plugin -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <!-- // <script src="js/jquery-plugin-fontface.js"></script> -->
-  <!-- angular ui router -->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-  <!-- angular routing -->
   <script src="js/app.modules.js"></script>
   <script src="js/app.routes.js"></script>
   <script src="js/font.controller.js"></script>
 </head>
 <body ui-view>
-  <div><h1 id="header">Grumpy wizards make toxic brew for the evil Queen and Jack.</h1></div>
-  <div><p id="paragraph">Grumpy wizards make toxic brew for the evil Queen and Jack.</p></div>
+  <div class="container">
+    <div><h1 id="header">Welcome to FontGen </h1></div>
+    <div><p id="paragraph">Generate new potential font combinations by clicking the “Randomize” button! Save your favorite pairs for use later by clicking “Save”. Happy fonting.</p></div>
+    <div>
+      <input type="button" class="button randomize" value="Randomize" ng-click="randomize()">
+      <input type="button" class="button save" value="Save Combo" ng-click="save()">
+    </div>
+  </div>
 </body>
 </html>
