@@ -18,49 +18,60 @@ input {
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  color:    #909;
+  color: #222;
   width: 100%;
 }
+
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color:    #909;
+  color: #222;
   opacity:  1;
   width: 100%;
-
 }
+
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color:    #909;
+  color: #222;
   opacity:  1;
   width: 100%;
-
 }
+
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color:    #909;
+  color: #222;
   width: 100%;
-
 }
-:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
-  color:    #909;
-  width: 100%;
 
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color: #222;
+  width: 100%;
 }
 
 #header {
   width: 100%;
-    line-height: 1.5em;
-
+  line-height: 1.5em;
 }
-
 
 #paragraph {
   width: 100%;
-      word-wrap: break-word;
-  color:    #909;
-
+  color: #222;
 }
 
 
+p {
+  color: blue;
+}
+
 textarea {
   border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.popover {
+  color: red;
+  margin: 40px;
 }
 
 .button {

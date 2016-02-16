@@ -4,28 +4,44 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>FontGen | Randomizing Font Pairs since 2016</title>
-  <!-- fonts -->
-  <!-- <link href="http://fonts.googleapis.com/css?family=Abril+Fatface|Abel|ABeeZee|Open+Sans|Montserrat" rel="stylesheet" type="text/css"> -->
   <!-- icons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- bootstrap + css -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- jquery -->
+  <!-- // <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
   <!-- angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <!-- angular -->
   <script src="js/app.modules.js"></script>
   <script src="js/app.routes.js"></script>
   <script src="js/font.controller.js"></script>
 </head>
 <body ui-view>
   <div class="container">
-    <div><h1><input type="text" name="" value="" placeholder="Welcome to FontGen" id="header"></h1></div>
-    <!-- <div><p><input type="text" name="" value="" placeholder="Generate new potential font combinations by clicking the “Randomize” button! Save your favorite pairs for use later by clicking “Save”. Happy fonting."  id="paragraph" maxlength="1000"></p></div> -->
-    <div>
-    <textarea name="" id="paragraph" cols="30" rows="4">Generate new potential font combinations by clicking the “Randomize” button! Save your favorite pairs for use later by clicking “Save”. Happy fonting.</textarea></div>
-      <input type="button" class="button randomize" value="Randomize" ng-click="randomize()">
-      <input type="button" class="button save" value="Save Combo" ng-click="save()">
+    <div class ="row">
+      <div class="col-md-8">
+        <h1 ng-mouseenter="showNameHeader()" ng-mouseleave="hideNameHeader()"><input type="text" name="" value="" placeholder="Welcome to FontGen" id="header"></h1>
+      </div>
+      <div class="col-md-4">
+        <p>{{fontName}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <textarea name="" id="paragraph" cols="30" rows="3" ng-mouseenter="showNameParagraph()" ng-mouseleave="hideNameParagraph()">Header and paragraph text is editable! Just click and change. Generate new potential font combinations by clicking the “Randomize” button! Save your favorite pairs for use later by clicking “Save”.</textarea>
+      </div>
+      <div class="col-md-4">
+        <p>{{fontName2}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <input type="button" class="button randomize" value="Randomize" ng-click="randomize()">
+        <input type="button" class="button save" value="Save Combo" ng-click="save()">
+      </div>
     </div>
   </div>
 </body>
