@@ -9,6 +9,60 @@ body {
   margin-top: 50px;
 }
 
+input {
+  outline: none;
+  border: none;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    #909;
+  width: 100%;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #909;
+  opacity:  1;
+  width: 100%;
+
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #909;
+  opacity:  1;
+  width: 100%;
+
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    #909;
+  width: 100%;
+
+}
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color:    #909;
+  width: 100%;
+
+}
+
+#header {
+  width: 100%;
+    line-height: 1.5em;
+
+}
+
+
+#paragraph {
+  width: 100%;
+      word-wrap: break-word;
+  color:    #909;
+
+}
+
+
+textarea {
+  border: none;
+}
+
 .button {
   text-decoration: none;
   border: none;

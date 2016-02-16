@@ -20,9 +20,10 @@
 </head>
 <body ui-view>
   <div class="container">
-    <div><h1 id="header">Welcome to FontGen </h1></div>
-    <div><p id="paragraph">Generate new potential font combinations by clicking the “Randomize” button! Save your favorite pairs for use later by clicking “Save”. Happy fonting.</p></div>
+    <div><h1><input type="text" name="" value="" placeholder="Welcome to FontGen" id="header"></h1></div>
+    <!-- <div><p><input type="text" name="" value="" placeholder="Generate new potential font combinations by clicking the “Randomize” button! Save your favorite pairs for use later by clicking “Save”. Happy fonting."  id="paragraph" maxlength="1000"></p></div> -->
     <div>
+    <textarea name="" id="paragraph" cols="30" rows="4">Generate new potential font combinations by clicking the “Randomize” button! Save your favorite pairs for use later by clicking “Save”. Happy fonting.</textarea></div>
       <input type="button" class="button randomize" value="Randomize" ng-click="randomize()">
       <input type="button" class="button save" value="Save Combo" ng-click="save()">
     </div>
