@@ -3,5 +3,4 @@
 
 angular
   .module('Font', ['ui.router'])
-
 })()
