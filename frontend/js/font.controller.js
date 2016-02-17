@@ -20,6 +20,34 @@ function FontController ($state, $stateParams, $scope, $http){
     }
   }
 
+  // Set toggle classes to change colors based on toggle click
+  $scope.toggle = true;
+  $scope.toggle2 = true;
+
+  // Set variables for toggling based on toggle click
+  var toggles = false;
+  var toggles2 = false;
+
+  $scope.toggleHeader = function() {
+    if (toggles) {
+      $scope.unlockHeader();
+      toggles = false;
+    } else {
+      $scope.lockHeader();
+      toggles = true;
+    }
+  }
+
+  $scope.toggleParagraph = function() {
+    if (toggles2) {
+      $scope.unlockParagraph();
+      toggles2 = false;
+    } else {
+      $scope.lockParagraph();
+      toggles2 = true;
+    }
+  }
+
   $scope.lockHeader = function(){
     headerLockIsClicked = true;
   }
@@ -28,14 +56,13 @@ function FontController ($state, $stateParams, $scope, $http){
     paragraphLockIsClicked = true;
   }
 
-  $scope.toggle = function() {
-    console.log('clicked')
-  };
+  $scope.unlockHeader = function(){
+    headerLockIsClicked = false;
+  }
 
-  $scope.toggle2 = function() {
-    paragraphLockIsClicked == false;
-    return  true
-  };
+  $scope.unlockParagraph = function(){
+    paragraphLockIsClicked = false;
+  }
 
   //Logic for randomization of fonts; Initially pulling fonts from Google Fonts
   $scope.randomize = function(section){
