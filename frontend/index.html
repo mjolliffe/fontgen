@@ -21,22 +21,26 @@
 <body ui-view>
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <h1 ng-mouseenter="showNameHeader()" ng-mouseleave="hideNameHeader()"><input type="text" name="" value="" placeholder="Welcome to FontGen" id="header"></h1>
+      <div class="col-md-10">
+        <h1><input type="text" name="" value="" placeholder="Welcome to FontGen" id="header"></h1>
       </div>
-      <div class="col-md-4">
-        <input type="button" class="button set" value="Set" ng-click="setHeader()">
+      <div class="col-md-2">
+        <input type="button" class="button set" value="Lock Font" ng-click="setHeader()">
+        <input type="button" class="button show" value="Show Font Name" ng-mouseenter="showNameHeader()" ng-mouseleave="hideNameHeader()">
         <p>{{fontName}}</p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
-        <textarea name="" id="paragraph" cols="30" rows="3" ng-mouseenter="showNameParagraph()" ng-mouseleave="hideNameParagraph()">Header and paragraph text is editable! Just click and change. Generate new potential font combinations by clicking the “Randomize” button! Save your favorite pairs for use later by clicking “Save”.</textarea>
+      <div class="col-md-10">
+        <textarea name="" id="paragraph" cols="30" rows="3">Header and paragraph text is editable! Just click and change. Generate new potential font combinations by clicking the “Randomize” button! Save your favorite pairs for use later by clicking “Save”.</textarea>
       </div>
-      <div class="col-md-4">
-        <input type="button" class="button set" value="Set" ng-click="setParagraph()">
+      <div class="col-md-2">
+        <input type="button" class="button set" value="Lock Font" ng-click="setParagraph()">
+        <input type="button" class="button show" value="Show Font Name" ng-mouseenter="showNameParagraph()" ng-mouseleave="hideNameParagraph()">
         <p>{{fontName2}}</p>
       </div>
+    </div>
+    <div class="row">
     </div>
     <div class="row">
       <div class="col-md-12">

@@ -5,7 +5,7 @@
   box-sizing: border-box; }
 
 body {
-  margin-top: 50px; }
+  margin-top: 20px; }
 
 input {
   outline: none;
@@ -46,14 +46,19 @@ input {
 
 #header {
   width: 100%;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+  font-size: 2em;
+  margin: 30px 0px; }
 
 #paragraph {
   width: 100%;
-  color: #222; }
+  color: #222;
+  font-size: 2em;
+  margin: 40px 0px; }
 
 p {
-  color: blue; }
+  color: blue;
+  font-size: 1.25em; }
 
 textarea {
   border: none;
@@ -63,16 +68,13 @@ textarea {
   -moz-box-shadow: none;
   box-shadow: none; }
 
-.popover {
-  color: red;
-  margin: 40px; }
-
 .button {
   text-decoration: none;
   border: none;
   color: white;
   padding: 5px;
-  margin: 10px 0px; }
+  margin: 20px 0px;
+  font-size: 1.2em; }
 
 .randomize {
   background-color: blue; }
@@ -81,7 +83,13 @@ textarea {
   background-color: green; }
 
 .set {
+  border: 1px solid red;
+  background-color: red;
+  text-align: center;
+  margin: 50px 0px 10px 0px; }
+
+.show {
   border: 1px solid black;
-  border-radius: 10px;
   background-color: black;
-  text-align: center; }
+  text-align: center;
+  margin: 10px 0px; }
