@@ -10,9 +10,19 @@ AppRoutes.$inject = ["$stateProvider", "$urlRouterProvider"];
 function AppRoutes($stateProvider, $urlRouterProvider){
 
   $stateProvider
-    .state('font', {
+    .state('fontgen', {
       url:'/',
-      templateUrl: 'index.html',
+      templateUrl: 'fontgen.html',
+      controller: 'FontController'
+    })
+    .state('about', {
+      url:'/about',
+      templateUrl: 'about.html',
+      controller: 'FontController'
+    })
+    .state('profile', {
+      url:'/profile',
+      templateUrl: 'profile.html',
       controller: 'FontController'
     })
     $urlRouterProvider.otherwise('/');

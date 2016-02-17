@@ -16,38 +16,10 @@
   <!-- bootstrap + css -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- // <script src="js/ui-bootstrap-tpls-1.1.2.min.js"></script> -->
+
+  // <script src="js/ui-bootstrap-tpls-1.1.2.min.js"></script>
 </head>
 <body ui-view>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10">
-        <h1><input type="text" name="" value="" placeholder="Welcome to FontGen" id="header"></h1>
-      </div>
-      <div class="col-md-2">
-        <input type="button" class="button set" value="Lock Font" ng-click="setHeader()">
-        <input type="button" class="button show" value="Show Font Name" ng-mouseenter="showNameHeader()" ng-mouseleave="hideNameHeader()">
-        <p>{{fontName}}</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-10">
-        <textarea name="" id="paragraph" cols="30" rows="3">Header and paragraph text is editable! Just click and change. Generate new potential font combinations by clicking the “Randomize” button! Save your favorite pairs for use later by clicking “Save”.</textarea>
-      </div>
-      <div class="col-md-2">
-        <input type="button" class="button set" value="Lock Font" ng-click="setParagraph()">
-        <input type="button" class="button show" value="Show Font Name" ng-mouseenter="showNameParagraph()" ng-mouseleave="hideNameParagraph()">
-        <p>{{fontName2}}</p>
-      </div>
-    </div>
-    <div class="row">
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <input type="button" class="button randomize" value="Randomize" ng-click="randomize()">
-        <input type="button" class="button save" value="Save Combo" ng-click="save()">
-      </div>
-    </div>
-  </div>
+
 </body>
 </html>

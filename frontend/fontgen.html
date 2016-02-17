@@ -1,0 +1,37 @@
+<nav>
+  <a ui-sref-active="active" ui-sref="fontgen">Mix</a>
+  <a ui-sref-active="active" ui-sref="about">About</a>
+  <a ui-sref-active="active" ui-sref="profile">Profile</a>
+</nav>
+<div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <h1><input type="text" name="" value="" placeholder="Welcome to FontGen" id="header" ng-disabled="disable"></h1>
+      </div>
+      <div class="col-md-1">
+        <input type="button" class="button lock" value="Lock" ng-click="lockHeader()" ng-model="disable">
+      </div>
+      <div class="col-md-1">
+        <input type="button" class="button show" value="Font Name" ng-mouseenter="showNameHeader()" ng-mouseleave="hideNameHeader()">
+        <p>{{fontName}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10">
+        <textarea name="" id="paragraph" cols="30" rows="4">Header and paragraph text is editable! Just click and change. Generate new potential font combinations by clicking the “Randomize” button! Lock either the header or paragraph text if you like one font, but want to pair it with another by clicking "Lock". Save your favorite pairs for use later by clicking “Save”.</textarea>
+      </div>
+      <div class="col-md-1">
+        <input type="button" class="button lock" value="Lock" ng-click="lockParagraph()">
+      </div>
+      <div class="col-md-1">
+        <input type="button" class="button show" value="Font Name" ng-mouseenter="showNameParagraph()" ng-mouseleave="hideNameParagraph()">
+        <p>{{fontName2}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12  break">
+        <input type="button" class="button randomize" value="Randomize" ng-click="randomize()">
+        <input type="button" class="button save" value="Save Combo" ng-click="save()">
+      </div>
+    </div>
+  </div>
