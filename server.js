@@ -28,7 +28,7 @@ var apiRoutes = require('./routes/api')(app, express);
 app.use('/api', apiRoutes)
 
 app.get('*', function(req, res){
-  res.sendFile(path.join('/frontend/fontgen.html'))
+  res.sendFile(path.join(__dirname + '/frontend/fontgen.html'))
 });
 
 // START THE SERVER

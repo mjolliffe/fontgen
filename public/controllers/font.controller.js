@@ -142,24 +142,6 @@ function FontController ($state, $stateParams, $scope, $http){
 
       document.getElementById("paragraph").style.fontFamily = fontName2;
 
-      // Logic for whether a header or paragraph is locked by the user because the user likes that font. Need to work on cleaning up logic so that the font attributes - name and url are also kept.
-      // if (headerLockIsClicked == false) {
-      // } else if (headerLockIsClicked == true){
-      //   document.getElementById("header").style.pointerEvents = "none";
-      //   // lock font name
-      //   console.log(fontName)
-      // }
-
-      // if (paragraphLockIsClicked == false) {
-      //   document.getElementById("paragraph").style.fontFamily = fontName2;
-      // } else if (paragraphLockIsClicked == true) {
-      //   document.getElementById("paragraph").style.pointerEvents = "none";
-      //   // lock font name
-      //   console.log(fontName2)
-      // }
-
-      // console.log(headerLockIsClicked)
-
       // Shows/Hides Font Names
       $scope.showNameHeader = function(){
         $scope.fontName = fontName
