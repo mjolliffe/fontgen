@@ -1,27 +1,33 @@
+<nav>
+  <a ui-sref-active="active" ui-sref="fontgen">FontGen</a>
+  <a ui-sref-active="active" ui-sref="about">About</a>
+  <a ng-if="loggedIn" ui-sref-active="active" ui-sref="profile">My Pairs</a>
+  <a ng-if="!loggedIn"  ui-sref-active="active" ui-sref="login">Login</a>
+  <a ng-if="loggedIn" ng-click="doLogout()">Logout</a></li>
+</nav>
 <div class="container">
-  <h2>Sign Up!</h2>
   <form ng-submit="createUser()">
     <div class="row">
-      <label for="inputName" class="left-jus col-md-offset-3">Name</label>
-      <div class="form-group col-md-6 col-md-offset-3">
+      <label for="inputName" class="">Name</label>
+      <div class="form-group">
         <input type="text" id="inputName1" class="form-control" placeholder="Emma Robertson" ng-model="userData.name" required />
       </div>
     </div>
     <div class="row">
-      <label for="inputUsername" class="left-jus col-md-offset-3">Username</label>
-      <div class="form-group col-md-6 col-md-offset-3">
+      <label for="inputUsername" class="">Username</label>
+      <div class="form-group">
         <input type="text" id="inputUsername" class="form-control" placeholder="emmarobertson" ng-model="userData.username" required />
       </div>
     </div>
     <div class="row">
-      <label for="inputEmail" class="left-jus col-md-offset-3">Email</label>
-      <div class="form-group col-md-6 col-md-offset-3">
+      <label for="inputEmail" class="">Email</label>
+      <div class="form-group">
         <input type="email" id="inputEmail" class="form-control" placeholder="emma@gmail.com" ng-model="userData.email" required />
       </div>
     </div>
     <div class="row">
-      <label for="inputPword" class="left-jus col-md-offset-3">Password</label>
-      <div class="form-group col-md-6 col-md-offset-3">
+      <label for="inputPword" class="">Password</label>
+      <div class="form-group">
         <input type="password" id="inputPword" class="form-control" placeholder="Save your info!" ng-model="userData.password" required />
       </div>
     </div>
