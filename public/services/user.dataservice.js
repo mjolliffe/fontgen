@@ -12,7 +12,7 @@
     // create a new object
     var userFactory = {};
 
-    userFactory.user = {}
+    userFactory.user = {};
 
     // get a single user
     userFactory.get = function(id) {

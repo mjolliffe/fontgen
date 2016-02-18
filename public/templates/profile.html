@@ -1,10 +1,20 @@
-<nav>
-  <a ui-sref-active="active" ui-sref="fontgen">FontGen</a>
-  <a ui-sref-active="active" ui-sref="about">About</a>
-  <a ng-if="loggedIn" ui-sref-active="active" ui-sref="profile">My Pairs</a>
-  <a ng-if="!loggedIn"  ui-sref-active="active" ui-sref="login">Login</a>
-  <a ng-if="loggedIn" ng-click="doLogout()">Logout</a></li>
-</nav>
+<div class="container" controller="UserController">
+  <div class="col-md-12">
+    <form ng-controller="LoginController" class="form-inline" ng-submit="login()" ng-hide="isLoggedIn()">
+      <h1>Log In To See Your Font Combos</h1>
+      <div class="form-group">
+        <label for="inputEmail">Email</label>
+        <input type="text" id="inputEmail" class="form-control" placeholder="" ng-model="loginData.email" required />
+      </div>
+      <div class="form-group">
+        <label for="inputPword">Password</label>
+        <input type="password" id="inputPword" class="form-control" placeholder="" ng-model="loginData.password" required />
+      </div>
+      <button class="btn btn-success submit-login-button" type="submit">Login!</button>
 
-
-<h1>Profile Page where user will save their info and fonts!</h1>
+    </form>
+  </div>
+  <div class="col-md-12">
+  <a ui-sref="signup">Don't have an account? Sign Up Today!</a>
+  </div>
+</div>

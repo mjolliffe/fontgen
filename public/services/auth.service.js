@@ -10,29 +10,51 @@
   authService.$inject = ['$http', '$q', 'authToken', 'userDataService', '$state'];
   authInterceptor.$inject = ['$q', '$location', 'authToken'];
 
+  // =================================================
+  // factory for handling tokens
+  // inject $window to store token client-side
+  // =================================================
+  function authToken($window) {
+   var authTokenFactory = {};
 
-  function authService($http, $q, userDataService, $state){
+   authTokenFactory.getToken = function(){
+     return $window.localStorage.getItem('token');
+   };
+
+   authTokenFactory.setToken = function(token){
+     if(token) {
+       $window.localStorage.setItem('token', token);
+     } else {
+       $window.localStorage.removeItem('token');
+     }
+    };
+   return authTokenFactory;
+  }
+
+  function authService($http, $q, authToken, userDataService, $state){
     // create auth factory object
     var authFactory = {};
     var currentUser;
     // handle login
-    authFactory.login = function(username, password) {
-      return $http.post('/api/authenticate', {
-        username: username,
+    authFactory.login = function(email, password) {
+      return $http.post('/api/login', {
+        email: email,
         password: password
       })
         .success(function(data){
           authToken.setToken(data.token);
-          currentUser = data.user;
-          userDataService.user = data.user;
+          currentUser           = data.user;
+          userDataService.user  = data.user;
           return data;
+          // console.log(currentUser)
+          // console.log(data)
         });
     }
 
     // handle logout
     authFactory.logout = function(){
       authToken.setToken();
-      $state.go('fontgen.html')
+      $state.go('fontgen');
     }
 
     // check if a user is logged in
@@ -58,31 +80,6 @@
     return authFactory;
   }
 
-
-
-   // =================================================
-   // factory for handling tokens
-   // inject $window to store token client-side
-   // =================================================
-   function authToken($window) {
-
-    var authTokenFactory = {};
-
-    authTokenFactory.getToken = function(){
-      return $window.localStorage.getItem('token');
-    }
-
-    authTokenFactory.setToken = function(token){
-      if(token)
-        $window.localStorage.setItem('token', token);
-      else
-        $window.localStorage.removeItem('token');
-    }
-
-    return authTokenFactory;
-
-   }
-
    // =================================================
    // application configuration to integrate token to requests
    // =================================================
@@ -93,8 +90,7 @@
     // attach the token to every request
     interceptorFactory.request = function(config){
       var token = authToken.getToken();
-      if(token)
-        config.header['x-access-token'] = token;
+      if(token) config.headers['x-access-token'] = token;
       return config;
     }
     // redirect if a token doesn't authenticate

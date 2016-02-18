@@ -12,23 +12,20 @@ function AppRoutes($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('fontgen', {
       url:'/',
-      templateUrl: '/templates/fontgen.html',
-      controller: 'FontController'
+      templateUrl: '/templates/fontgen.html'
     })
     .state('about', {
       url:'/about',
-      templateUrl: '/templates/about.html',
-      controller: 'FontController'
+      templateUrl: '/templates/about.html'
     })
     .state('profile', {
       url:'/profile',
-      templateUrl: '/templates/profile.html',
-      controller: 'UserController'
+      templateUrl: '/templates/profile.html'
     })
-    .state('login', {
-      url: '/login',
-      templateUrl: '/templates/login.html',
-      controller: 'LoginController'
+    .state('signup', {
+      url: '/signup',
+      templateUrl: '/templates/signup.html',
+      controller: 'UserController'
     })
 
     $urlRouterProvider.otherwise('/');

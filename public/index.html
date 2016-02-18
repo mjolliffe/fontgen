@@ -11,7 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js"></script>
-  <script src="ui-bootstrap-tpls-1.1.2.min.js"></script>
+  <script src="assets/js/ui-bootstrap-tpls-1.1.2.min.js"></script>
   <!-- angular files -->
   <script src="app.modules.js"></script>
   <script src="app.routes.js"></script>
@@ -20,9 +20,32 @@
   <script src="controllers/main.controller.js"></script>
   <script src="controllers/login.controller.js"></script>
   <script src="services/auth.service.js"></script>
-  <script src="services/user.service.js"></script>
+  <script src="services/user.dataservice.js"></script>
 
 </head>
-<body ui-view>
+<body>
+<nav ng-controller="MainController">
+  <div class="container">
+    <ul class="nav nav-tabs">
+    <li role="presentation" ui-sref-active="active" >
+      <a ui-sref="fontgen">FontGen</a>
+    </li>
+    <li role="presentation" ui-sref-active="active" >
+      <a ui-sref="about">About</a>
+    </li>
+    <li role="presentation" ui-sref-active="active">
+      <a ui-sref="profile">My Pairs</a>
+    </li>
+    <li role="presentation" ui-sref-active="active" ng-hide="isLoggedIn()">
+      <a ui-sref="signup">Signup</a>
+    </li>
+    <li role="presentation" ui-sref-active="active" ng-if="isLoggedIn()">
+      <a ng-click="logout()">Logout</a>
+    </li>
+    </ul>
+  </div>
+</nav>
+<main ui-view>
+</main>
 </body>
 </html>

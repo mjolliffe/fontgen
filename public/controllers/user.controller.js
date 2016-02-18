@@ -1,4 +1,6 @@
 (function() {
+  "use strict";
+
   angular.module('Font')
          .controller('UserController', UserController);
 
@@ -10,19 +12,18 @@
     // attaching functions to controller
     $scope.createUser = createUser;
 
-
     // defining function declarations
     function createUser() {
       $scope.message = '';
       // use the create function in the userService
-      userDataService.create(vm.userData)
+      userDataService.create($scope.userData)
         .success(function(data) {
           $scope.userData = {};
           $scope.message = data.message;
-          console.log(vm.message);
+          console.log($scope.message);
         });
 
-        $state.go('fontgen');
+        $state.go('profile');
     };
   };
 })();

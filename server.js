@@ -1,36 +1,67 @@
-// BASE SETUP PACKAGES
-var express = require('express');
+var express      = require('express'),
+    path         = require('path'),
+    favicon      = require('serve-favicon'),
+    logger       = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser   = require('body-parser');
+
+// load the env vars
+require('dotenv').load();
+
+var apiRoutes = require('./app/routes/api_routes');
+
 var app = express();
-var bodyParser = require('body-parser');
-var morgan = require('morgan');
-var mongoose = require('mongoose');
-var config = require('./backend/config/config');
-var path = require('path');
 
-// APP CONFIGURATION
-app.use(bodyParser.urlencoded({ extended: true }));
+// requiring the database
+var mongoose = require('./app/config/database');
+
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+}
+
+// uncomment after placing your favicon in /img
+// app.use(favicon(path.join(__dirname, 'public/assets/img', 'derry.ico')));
+app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(allowCrossDomain);
+
+app.use('/api', apiRoutes);
+app.use(express.static(path.join(__dirname, 'public')));
+
+// catch 404 and forward to error handler
 app.use(function(req, res, next) {
-   res.setHeader('Access-Control-Allow-Origin', '*');
-   res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
-   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, \
-    Authorization');
-    next();
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
-app.use(morgan('dev'));
+// error handlers
 
-mongoose.connect(config.database);
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.json({
+      message: err.message,
+      error: err
+    });
+  });
+}
 
-app.use(express.static(__dirname + '/public'))
-
-var apiRoutes = require('./backend/routes/api')(app, express);
-app.use('/api', apiRoutes)
-
-app.get('*', function(req, res){
-  res.sendFile(path.join(__dirname + '/public'))
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.json({
+    message: err.message,
+    error: {}
+  });
 });
 
-// START THE SERVER
-app.listen(config.port);
-console.log('Listening on port ' + config.port);
+
+module.exports = app;
