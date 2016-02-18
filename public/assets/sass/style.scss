@@ -13,7 +13,7 @@ body {
 #header {
   width: 100%;
   line-height: 1.5em;
-  font-size: 1.75em;
+  font-size: 2.5em;
   margin: 10px 0px;
 }
 
@@ -32,6 +32,7 @@ p {
 input {
   outline: none;
   border: none;
+  padding: 0px 10px;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
@@ -68,7 +69,7 @@ textarea {
   border: none;
   overflow: auto;
   outline: none;
-
+  padding: 0px 10px;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;

@@ -1,10 +1,10 @@
 (function() {
   angular.module('Font')
-         .controller('UsersController', UsersController);
+         .controller('UserController', UserController);
 
-  UsersController.$inject = ['$state', 'authService', 'userDataService', '$log', '$scope'];
+  UserController.$inject = ['$state', 'authService', 'userDataService', '$log', '$scope'];
 
-  function UsersController($state, authService, userDataService, $log, $scope) {
+  function UserController($state, authService, userDataService, $log, $scope) {
 
     $scope.currentUser = authService.currentUser;
     // attaching functions to controller

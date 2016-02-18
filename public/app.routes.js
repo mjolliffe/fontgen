@@ -23,8 +23,14 @@ function AppRoutes($stateProvider, $urlRouterProvider){
     .state('profile', {
       url:'/profile',
       templateUrl: '/templates/profile.html',
-      controller: 'FontController'
+      controller: 'UserController'
     })
+    .state('login', {
+      url: '/login',
+      templateUrl: '/templates/login.html',
+      controller: 'LoginController'
+    })
+
     $urlRouterProvider.otherwise('/');
   }
 })()
