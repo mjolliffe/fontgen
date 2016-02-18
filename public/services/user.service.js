@@ -5,7 +5,7 @@
     .module('Font')
     .factory('userDataService', userDataService);
 
-  userDataService.$inject = [$http];
+  userDataService.$inject = ['$http'];
 
   function userDataService($http) {
 

@@ -68,7 +68,7 @@
 
     var authTokenFactory = {};
 
-    authTokenFactory = function(){
+    authTokenFactory.getToken = function(){
       return $window.localStorage.getItem('token');
     }
 

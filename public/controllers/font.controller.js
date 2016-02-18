@@ -120,8 +120,6 @@ function FontController ($state, $stateParams, $scope, $http){
 
       document.head.appendChild(newStyle);
 
-      console.log($scope.fonts)
-
       if (headerLockIsClicked == true) {
         fontName = $scope.fonts.header.name,
         fontURL = $scope.fonts.header.url

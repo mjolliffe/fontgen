@@ -12,17 +12,17 @@ function AppRoutes($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('fontgen', {
       url:'/',
-      templateUrl: 'fontgen.html',
+      templateUrl: '/templates/fontgen.html',
       controller: 'FontController'
     })
     .state('about', {
       url:'/about',
-      templateUrl: 'about.html',
+      templateUrl: '/templates/about.html',
       controller: 'FontController'
     })
     .state('profile', {
       url:'/profile',
-      templateUrl: 'profile.html',
+      templateUrl: '/templates/profile.html',
       controller: 'FontController'
     })
     $urlRouterProvider.otherwise('/');

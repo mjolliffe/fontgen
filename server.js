@@ -4,7 +4,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
-var config = require('./config');
+var config = require('./backend/config/config');
 var path = require('path');
 
 // APP CONFIGURATION
@@ -22,13 +22,13 @@ app.use(morgan('dev'));
 
 mongoose.connect(config.database);
 
-app.use(express.static(__dirname + '../frontend'))
+app.use(express.static(__dirname + '/public'))
 
-var apiRoutes = require('./routes/api')(app, express);
+var apiRoutes = require('./backend/routes/api')(app, express);
 app.use('/api', apiRoutes)
 
 app.get('*', function(req, res){
-  res.sendFile(path.join(__dirname + '/frontend/fontgen.html'))
+  res.sendFile(path.join(__dirname + '/public'))
 });
 
 // START THE SERVER
