@@ -16,4 +16,4 @@ Run npm install within the root folder in order to take care of all the required
 
 #Issues/Pending Implementations
 - Small bugs: Issues with CORS when a user is logged in; User is not logged out on front end when they are deleted. Minor styling issues.
-- Pending: Include alerts/messages for the user when they successfully create, update, or delete their accounts and for when font pairs are saved.
+- Pending: Include alerts/messages for the user when they successfully create, update, or delete their accounts and for when font pairs are saved. Add a "popular pairs" board which users contribute to and vote on.
