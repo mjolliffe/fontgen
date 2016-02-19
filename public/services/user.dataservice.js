@@ -30,13 +30,13 @@
     };
 
      // update a user
-    userFactory.update = function(id, userData) {
-      return $http.put('/api/users/' + id, userData);
+    userFactory.update = function(userData) {
+      return $http.put('/api/users/', userData);
     };
 
      // delete a user
-    userFactory.delete = function(id) {
-      return $http.delete('/api/users/' + id);
+    userFactory.delete = function() {
+      return $http.delete('/api/users/');
     };
 
      // return our entire userFactory object

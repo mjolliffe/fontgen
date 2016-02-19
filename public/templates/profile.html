@@ -1,6 +1,6 @@
-<div class="container" controller="UserController">
+<div class="container" ng-controller="LoginController" ng-hide="isLoggedIn()">
   <div class="col-md-12">
-    <form ng-controller="LoginController" class="form-inline" ng-submit="login()" ng-hide="isLoggedIn()">
+    <form class="form-inline" ng-submit="login()">
       <h1>Log In To See Your Font Combos</h1>
       <div class="form-group">
         <label for="inputEmail">Email</label>
@@ -11,10 +11,37 @@
         <input type="password" id="inputPword" class="form-control" placeholder="" ng-model="loginData.password" required />
       </div>
       <button class="btn btn-success submit-login-button" type="submit">Login!</button>
-
     </form>
   </div>
   <div class="col-md-12">
   <a ui-sref="signup">Don't have an account? Sign Up Today!</a>
+  </div>
+</div>
+<div class="container" ng-controller="LoginController" ng-show="isLoggedIn()">
+  <div class="col-md-12">
+  <h1>Font Combinations</h1>
+  </div>
+</div>
+<div>
+<div class="col-md-12" ng-controller="UserController">
+  <h1>Delete</h1>
+  <button type="submit" name="" value="delete" ng-click="deleteUser()">Delete User</button>
+  <div class="col-md-12">
+    <form class="form-inline" ng-submit="updateUser()">
+      <h1>Update User </h1>
+      <div class="form-group">
+        <label for="inputEmail">Name</label>
+        <input type="text" id="inputEmail" class="form-control" placeholder="" ng-model="userData.name" required />
+      </div>
+      <div class="form-group">
+        <label for="inputEmail">Email</label>
+        <input type="text" id="inputEmail" class="form-control" placeholder="" ng-model="userData.email" required />
+      </div>
+      <div class="form-group">
+        <label for="inputPword">Password</label>
+        <input type="password" id="inputPword" class="form-control" placeholder="" ng-model="userData.password" required />
+      </div>
+      <button class="btn btn-success submit-login-button" type="submit">Update</button>
+    </form>
   </div>
 </div>

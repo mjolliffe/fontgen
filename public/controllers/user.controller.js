@@ -11,6 +11,7 @@
     $scope.currentUser = authService.currentUser;
     // attaching functions to controller
     $scope.createUser = createUser;
+    $scope.deleteUser = deleteUser;
 
     // defining function declarations
     function createUser() {
@@ -24,6 +25,26 @@
         });
 
         $state.go('profile');
+    };
+
+    function updateUser() {
+      console.log('updating!')
+      userDataService.update()
+        .success(function(data){
+          $scope.userData = {};
+          $scope.message = data.message;
+          console.log($scope.message);
+        });
+      $state.go('profile')
+    };
+
+    function deleteUser() {
+      userDataService.delete()
+        .success(function(data){
+          $scope.message = data.message;
+          console.log($scope.message);
+        });
+      $state.go('fontgen')
     };
   };
 })();

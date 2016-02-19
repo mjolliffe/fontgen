@@ -140,19 +140,10 @@ function FontController ($state, $stateParams, $scope, $http){
 
       document.getElementById("paragraph").style.fontFamily = fontName2;
 
-      // Shows/Hides Font Names
-      $scope.showNameHeader = function(){
-        $scope.fontName = fontName
-      }
-      $scope.hideNameHeader = function(){
-        $scope.fontName = " "
-      }
-      $scope.showNameParagraph = function(){
-        $scope.fontName2 = fontName2
-      }
-      $scope.hideNameParagraph = function(){
-        $scope.fontName2 = " "
-      }
+      $scope.fontName = fontName
+      $scope.fontURL = fontURL
+      $scope.fontName2 = fontName2
+      $scope.fontURL2 = fontURL2
 
       })
     }

@@ -27,6 +27,7 @@ var userAuth = function(req, res, next){
         } else {
           var token = jwt.sign({
             email: user.email,
+            _id: user._id
           }, secret, {
             expiresInMinutes: 43200 //expires in 30 days
           });
@@ -113,28 +114,35 @@ var usersAll = function(req, res){
 ///UPDATE USER
 
 var userUpdate = function(req, res){
-  User.findById(req.params.user_id, function(err, user){
-      if(err) res.send(err);
-      if (req.body.name)      user.name     = req.body.name;
-      if (req.body.email)     user.email    = req.body.email;
-      if (req.body.password)  user.password = req.body.password;
-
-      user.save(function(err){
-        if (err) res.send(err);
-        res.json({message: 'User updated!'})
-      });
+  console.log('getting to server')
+  var token = req.body.token || req.query.token || req.headers['x-access-token'];
+  jwt.verify(token, secret, function(err, decoded) {
+    User.findById(req.params.user_id, function(err, user){
+        if(err) res.send(err);
+        if (req.body.name)      user.name     = req.body.name;
+        if (req.body.email)     user.email    = req.body.email;
+        if (req.body.password)  user.password = req.body.password;
+        if (req.body.fonts)     user.fonts    = req.body.fonts;
+        user.save(function(err){
+          if (err) res.send(err);
+          res.json({message: 'User updated!'})
+        });
+    });
   });
 }
 
 ///DELETE USER
 
 var userDelete = function(req, res){
-  User.remove({
-    _id: req.params.id
-    }, function(err, user){
-      if(err) return res.send(err)
-      res.json({message:'User deleted!'});
+  var token = req.body.token || req.query.token || req.headers['x-access-token'];
+  jwt.verify(token, secret, function(err, decoded) {
+    User.remove({
+      _id: decoded._id
+      }, function(err, user){
+        if(err) return res.send(err)
+        res.json({message:'User deleted!'});
     });
+  });
 }
 
 ///EXPORT MODULE
