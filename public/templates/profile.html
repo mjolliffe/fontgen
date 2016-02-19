@@ -1,14 +1,14 @@
 <div class="container" ng-controller="LoginController" ng-show="isLoggedIn()">
   <div class="col-md-12">
-  <h1>Font Combinations</h1>
+  <h1>Font Pairs</h1>
   </div>
 
-  <div ng-controller="UserController">
+  <div ng-controller="FontController">
     <div class="row">
       <div ng-repeat="font in fonts">
         <ul>
-          <li>{{font.header.name}}</li>
-          <li>{{font.paragraph.name}}</li>
+          <li>Header: <a href="https://www.google.com/fonts#UsePlace:use/Collection:{{font.header.name}}" >{{font.header.name}}</a></li>
+          <li>Paragraph: <a href="https://www.google.com/fonts#UsePlace:use/Collection:{{font.header.name}}" >{{font.paragraph.name}}</a></li>
         </ul>
       </div>
     </div>
@@ -18,7 +18,7 @@
 <div class="container" ng-controller="LoginController" ng-hide="isLoggedIn()">
   <div class="col-md-12">
     <form class="form-inline" ng-submit="login()">
-      <h1>Log In To See Your Font Combos</h1>
+      <h1>Log In To See Your Font Pairs</h1>
       <div class="form-group">
         <label for="inputEmail">Email</label>
         <input type="text" id="inputEmail" class="form-control" placeholder="" ng-model="loginData.email" required />
@@ -34,8 +34,8 @@
   <a ui-sref="signup"><p class="name">Don't have an account? Sign Up Today!</p></a>
   </div>
 </div>
-<div class="container" ng-controller="UserController" ng-show="isLoggedIn()">
-    <div class="col-md-8">
+<div class="container" ng-controller="LoginController" ng-show="isLoggedIn()">
+    <div class="col-md-8" ng-controller="UserController">
       <form ng-submit="updateUser()">
         <h1>Update Settings</h1>
         <div class="form-group row">
@@ -59,7 +59,7 @@
         <button class="button randomize" type="submit">Update</button>
       </form>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" ng-controller="UserController">
       <h1>Delete Profile</h1>
       <button type="submit" name="" value="delete" ng-click="deleteUser()" class="button delete">Delete User</button>
     </div>

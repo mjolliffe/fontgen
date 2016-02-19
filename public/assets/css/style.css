@@ -27,7 +27,12 @@ a {
   color: blue; }
 
 a:hover {
-  color: blue; }
+  color: blue;
+  text-decoration: none; }
+
+li {
+  list-style: none;
+  display: inline-block; }
 
 h1 {
   margin-bottom: 30px; }
@@ -53,9 +58,6 @@ h1 {
 p {
   color: #222;
   font-size: 1.25em; }
-
-a:hover {
-  text-decoration: none; }
 
 .name {
   color: blue; }
@@ -149,18 +151,9 @@ textarea {
   text-align: center;
   margin: 10px 0px 0px; }
 
-/*
-.btn {
-  border: 1px solid green;
-  border-radius: none;
-  background-color: green;
-  text-align: center;
-  margin: 10px 0px 0px;
-}*/
 .rw-sentence {
   margin: 0;
-  text-align: left;
-  /*text-shadow: 1px 1px 1px rgba(255,255,255,0.8);*/ }
+  text-align: left; }
 
 .rw-sentence span {
   color: #222;
