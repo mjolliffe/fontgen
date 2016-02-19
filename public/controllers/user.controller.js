@@ -30,7 +30,7 @@
 
     function updateUser() {
       console.log('updating!')
-      userDataService.update()
+      userDataService.update($scope.userData)
         .success(function(data){
           $scope.userData = {};
           $scope.message = data.message;

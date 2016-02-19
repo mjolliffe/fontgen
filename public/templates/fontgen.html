@@ -4,7 +4,8 @@
       <h1><input type="text" name="" value="" placeholder="Welcome to FontGen" id="header"></h1>
     </div>
     <div class="col-md-2">
-      <a href="https://www.google.com/fonts#UsePlace:use/Collection:{{fontName}}" ><p>Header Font: {{fontName}}</p></a>
+      <p>Header Font:</p>
+      <a href="https://www.google.com/fonts#UsePlace:use/Collection:{{fontName}}" ><p class="name">{{fontName}}</p></a>
     </div>
     <div class="col-md-2">
       <button class="button lock" value="" ng-click="toggleHeader(); toggle = !toggle" ng-class="{'unlock' : toggle}">{{toggle &&'Lock' || 'Unlock'}}</button>
@@ -12,10 +13,11 @@
   </div>
   <div class="row">
     <div class="col-md-10">
-      <textarea name="" id="paragraph" cols="30" rows="6">Header and paragraph text is editable! Just click and change. Generate new potential font combinations by clicking the “Randomize” button! Lock either the header or paragraph text if you like one font, but want to pair it with another by clicking "Lock". Save your favorite pairs for use later by clicking “Save”.</textarea>
+      <textarea name="" id="paragraph" cols="30" rows="5">Header and paragraph text is editable! Just click and change. Generate new potential font combinations by clicking the “Randomize” button! Lock either the header or paragraph text if you like a font, but want to pair it with another. Save your favorite pairs for use later by clicking “Save Combo”.</textarea>
     </div>
     <div class="col-md-2">
-      <a href="https://www.google.com/fonts#UsePlace:use/Collection:{{fontName2}}" ><p>Paragraph Font: {{fontName2}}</p></a>
+      <p>Paragraph Font:</p>
+      <a href="https://www.google.com/fonts#UsePlace:use/Collection:{{fontName2}}" ><p class="name">{{fontName2}}</p></a>
     </div>
     <div class="col-md-2">
       <button class="button lock" value="" ng-click="toggleParagraph(); toggle2 = !toggle2" ng-class="{'unlock' : toggle2}">{{toggle2 &&'Lock' || 'Unlock'}}</button>

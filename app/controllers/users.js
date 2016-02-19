@@ -117,15 +117,15 @@ var userUpdate = function(req, res){
   var token = req.body.token || req.query.token || req.headers['x-access-token'];
   jwt.verify(token, secret, function(err, decoded) {
     User.findById(decoded._id, function(err, user){
-        if(err) res.send(err);
-        if (req.body.name)      user.name     = req.body.name;
-        if (req.body.email)     user.email    = req.body.email;
-        if (req.body.password)  user.password = req.body.password;
-        if (req.body.fonts)     user.fonts    = req.body.fonts;
-        user.save(function(err){
-          if (err) res.send(err);
-          res.json({message: 'User updated!'})
-        });
+      if (err) res.send(err);
+      if (req.body.name)      user.name     = req.body.name;
+      if (req.body.email)     user.email    = req.body.email;
+      if (req.body.password)  user.password = req.body.password;
+      if (req.body.fonts)     user.fonts    = req.body.fonts;
+      user.save(function(err){
+        if (err) res.send(err);
+        res.json({message: 'User updated!'})
+      });
     });
   });
 }
