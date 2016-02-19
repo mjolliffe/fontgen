@@ -12,6 +12,7 @@
     // attaching functions to controller
     $scope.createUser = createUser;
     $scope.deleteUser = deleteUser;
+    $scope.updateUser = updateUser;
 
     // defining function declarations
     function createUser() {

@@ -114,10 +114,9 @@ var usersAll = function(req, res){
 ///UPDATE USER
 
 var userUpdate = function(req, res){
-  console.log('getting to server')
   var token = req.body.token || req.query.token || req.headers['x-access-token'];
   jwt.verify(token, secret, function(err, decoded) {
-    User.findById(req.params.user_id, function(err, user){
+    User.findById(decoded._id, function(err, user){
         if(err) res.send(err);
         if (req.body.name)      user.name     = req.body.name;
         if (req.body.email)     user.email    = req.body.email;

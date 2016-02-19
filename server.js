@@ -16,7 +16,6 @@ var app = express();
 var mongoose = require('./app/config/database');
 
 var allowCrossDomain = function(req, res, next) {
-  console.log('in')
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
