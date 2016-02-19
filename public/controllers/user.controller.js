@@ -9,15 +9,13 @@
   function UserController($state, authService, userDataService, $log, $scope) {
 
     $scope.currentUser = authService.currentUser;
-    // attaching functions to controller
+
     $scope.createUser = createUser;
     $scope.deleteUser = deleteUser;
     $scope.updateUser = updateUser;
 
-    // defining function declarations
     function createUser() {
       $scope.message = '';
-      // use the create function in the userService
       userDataService.create($scope.userData)
         .success(function(data) {
           $scope.userData = {};

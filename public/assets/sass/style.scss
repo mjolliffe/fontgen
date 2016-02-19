@@ -24,8 +24,9 @@ nav {
   padding: 10px;
 }
 
-.nav li a:hover {
-  background-color: blue;
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: black;
   color: white;
 }
 

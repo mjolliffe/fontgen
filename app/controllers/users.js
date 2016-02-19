@@ -73,12 +73,10 @@ var tokenVerify = function(req, res, next){
 ///CREATE USER
 
 var userCreate = function(req, res){
-  var user = new User();
-  user.name = req.body.name;
-  user.email = req.body.email;
+  var user      = new User();
+  user.name     = req.body.name;
+  user.email    = req.body.email;
   user.password = req.body.password;
-
-   console.log(user.name + user.email + user.password);
 
   // save the user and check for errors
   user.save(function(err) {
@@ -121,7 +119,7 @@ var userUpdate = function(req, res){
       if (req.body.name)      user.name     = req.body.name;
       if (req.body.email)     user.email    = req.body.email;
       if (req.body.password)  user.password = req.body.password;
-      console.log(req.body)
+      // console.log(req.body.header.name)
       if (req.body.header)    user.fonts.push(req.body);
       user.save(function(err){
         if (err) res.send(err);
