@@ -1,9 +1,9 @@
 angular.module('Font')
   .controller('FontController', FontController);
 
-FontController.$inject = ['$state', '$stateParams', '$scope', '$http'];
+FontController.$inject = ['$state', '$stateParams', '$scope', '$http', 'authService', 'userDataService'];
 
-function FontController ($state, $stateParams, $scope, $http){
+function FontController ($state, $stateParams, $scope, $http, authService, userDataService){
 
   //Setting up variables to determine if header or paragraph stylings are locked; initially false, when "Lock" is clicked they change to true as per two following functions
   var headerLockIsClicked = false;
@@ -62,6 +62,11 @@ function FontController ($state, $stateParams, $scope, $http){
 
   $scope.unlockParagraph = function(){
     paragraphLockIsClicked = false;
+  }
+
+  $scope.save = function(){
+    console.log('in the font controller')
+    userDataService.update($scope.fonts)
   }
 
   //Logic for randomization of fonts; Initially pulling fonts from Google Fonts

@@ -121,7 +121,8 @@ var userUpdate = function(req, res){
       if (req.body.name)      user.name     = req.body.name;
       if (req.body.email)     user.email    = req.body.email;
       if (req.body.password)  user.password = req.body.password;
-      if (req.body.fonts)     user.fonts    = req.body.fonts;
+      console.log(req.body)
+      if (req.body.header)    user.fonts.push(req.body);
       user.save(function(err){
         if (err) res.send(err);
         res.json({message: 'User updated!'})

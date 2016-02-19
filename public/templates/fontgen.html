@@ -26,7 +26,9 @@
   <div class="row">
     <div class="col-md-12  break">
       <input type="button" class="button randomize" value="Randomize" ng-click="randomize()">
-      <input type="button" class="button save" value="Save Combo" ng-click="save()">
+      <div ng-controller="UserController">
+        <input type="button" class="button save" value="Save Combo" ng-click="save()">
+      </div>
     </div>
   </div>
 </div>
