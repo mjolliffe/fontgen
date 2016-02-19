@@ -6,14 +6,39 @@
 }
 
 body {
-  margin-top: 40px;
   font-family: Futura;
+  margin-top: 40px;
+}
+
+main {
+  margin-top: 40px;
+}
+
+nav {
+  width: 100%;
 }
 
 .nav li a {
   color: red;
-  font-size: 1.25em;
+  font-size: 1.5em;
   padding: 10px;
+}
+
+.nav li a:hover {
+  background-color: blue;
+  color: white;
+}
+
+a {
+  color: blue;
+}
+
+a:hover {
+  color: blue;
+}
+
+h1 {
+  margin-bottom: 30px;
 }
 
 #header {
@@ -30,7 +55,6 @@ body {
   margin: 10px 0px;
 }
 
-
 #paragraph {
   width: 100%;
   color: #222;
@@ -43,8 +67,16 @@ p {
   font-size: 1.25em;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .name {
   color: blue;
+}
+
+.display {
+  margin-top: 40px;
 }
 
 input {
@@ -83,6 +115,14 @@ input {
   width: 100%;
 }
 
+label {
+  font-size: 16px;
+}
+
+.form-control {
+  max-width: 75%;
+}
+
 textarea {
   border: none;
   overflow: auto;
@@ -115,6 +155,10 @@ textarea {
   background-color: green;
 }
 
+.delete {
+  background-color: red;
+}
+
 .lock {
   border: 1px solid red;
   background-color: red;
@@ -127,4 +171,61 @@ textarea {
   background-color: black;
   text-align: center;
   margin: 10px 0px 0px;
+}
+/*
+.btn {
+  border: 1px solid green;
+  border-radius: none;
+  background-color: green;
+  text-align: center;
+  margin: 10px 0px 0px;
+}*/
+
+.rw-sentence{
+  margin: 0;
+  text-align: left;
+  /*text-shadow: 1px 1px 1px rgba(255,255,255,0.8);*/
+}
+
+.rw-sentence span{
+  color: #222;
+  white-space: nowrap;
+  font-weight: normal;
+  line-height: 1.5em;
+}
+
+.rw-words{
+  display: inline;
+  text-indent: 10px;
+}
+
+.rw-words span{
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+  color: red;
+}
+
+.rw-words-2 span{
+  animation: rotateWordsSecond 18s linear infinite 0s;
+}
+.rw-words span:nth-child(2) {
+  animation-delay: 4s;
+  color: green;
+}
+.rw-words span:nth-child(3) {
+  animation-delay: 8s;
+  color: blue;
+}
+.rw-words span:nth-child(4) {
+  animation-delay: 12s;
+  color: red;
+}
+
+@keyframes rotateWordsSecond {
+  0%    { animation-timing-function: linear; width: 0px; }
+  10%   { opacity: 0.7; width: 0px; }
+  20%   { opacity: 1; width: 100%; }
+  30%   { opacity: 0; width: 100%; }
+  100%  { opacity: 0; }
 }

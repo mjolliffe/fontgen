@@ -1,3 +1,20 @@
+<div class="container" ng-controller="LoginController" ng-show="isLoggedIn()">
+  <div class="col-md-12">
+  <h1>Font Combinations</h1>
+  </div>
+
+  <div ng-controller="UserController">
+    <div class="row">
+      <div ng-repeat="font in fonts">
+        <ul>
+          <li>{{font.header.name}}</li>
+          <li>{{font.paragraph.name}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container" ng-controller="LoginController" ng-hide="isLoggedIn()">
   <div class="col-md-12">
     <form class="form-inline" ng-submit="login()">
@@ -10,38 +27,41 @@
         <label for="inputPword">Password</label>
         <input type="password" id="inputPword" class="form-control" placeholder="" ng-model="loginData.password" required />
       </div>
-      <button class="btn btn-success submit-login-button" type="submit">Login!</button>
+      <button class="button save" type="submit">Login</button>
     </form>
   </div>
   <div class="col-md-12">
-  <a ui-sref="signup">Don't have an account? Sign Up Today!</a>
+  <a ui-sref="signup"><p class="name">Don't have an account? Sign Up Today!</p></a>
   </div>
 </div>
-<div class="container" ng-controller="LoginController" ng-show="isLoggedIn()">
-  <div class="col-md-12">
-  <h1>Font Combinations</h1>
-  </div>
+<div class="container" ng-controller="UserController" ng-show="isLoggedIn()">
+    <div class="col-md-8">
+      <form ng-submit="updateUser()">
+        <h1>Update Settings</h1>
+        <div class="form-group row">
+          <label for="inputEmail" class="col-sm-2 form-control-label">Name</label>
+          <div class="col-sm-10">
+          <input type="text" id="inputName" class="form-control" placeholder="" ng-model="userData.name" required />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputEmail" class="col-sm-2 form-control-label">Email</label>
+          <div class="col-sm-10">
+          <input type="text" id="inputEmail" class="form-control" placeholder="" ng-model="userData.email" required />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPword" class="col-sm-2 form-control-label">Password</label>
+          <div class="col-sm-10">
+          <input type="password" id="inputPword" class="form-control" placeholder="" ng-model="userData.password" required />
+          </div>
+        </div>
+        <button class="button randomize" type="submit">Update</button>
+      </form>
+    </div>
+    <div class="col-md-4">
+      <h1>Delete Profile</h1>
+      <button type="submit" name="" value="delete" ng-click="deleteUser()" class="button delete">Delete User</button>
+    </div>
 </div>
-<div>
-<div class="col-md-12" ng-controller="UserController">
-  <h1>Delete</h1>
-  <button type="submit" name="" value="delete" ng-click="deleteUser()">Delete User</button>
-  <div class="col-md-12">
-    <form class="form-inline" ng-submit="updateUser()">
-      <h1>Update User </h1>
-      <div class="form-group">
-        <label for="inputEmail">Name</label>
-        <input type="text" id="inputName" class="form-control" placeholder="" ng-model="userData.name" required />
-      </div>
-      <div class="form-group">
-        <label for="inputEmail">Email</label>
-        <input type="text" id="inputEmail" class="form-control" placeholder="" ng-model="userData.email" required />
-      </div>
-      <div class="form-group">
-        <label for="inputPword">Password</label>
-        <input type="password" id="inputPword" class="form-control" placeholder="" ng-model="userData.password" required />
-      </div>
-      <button class="btn btn-success submit-login-button" type="submit">Update</button>
-    </form>
-  </div>
-</div>
+
