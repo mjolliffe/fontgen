@@ -16,27 +16,27 @@
 
     // get a single user
     userFactory.get = function(id) {
-      return $http.get('/api/users/' + id);
+      return $http.get(HEROKU_URL + 'api/users/' + id);
     };
 
      // get all users
     userFactory.all = function() {
-      return $http.get('/api/users/');
+      return $http.get(HEROKU_URL + 'api/users/');
     };
 
      // create a user
     userFactory.create = function(userData) {
-      return $http.post('/api/users/', userData);
+      return $http.post(HEROKU_URL + 'api/users/', userData);
     };
 
      // update a user
     userFactory.update = function(userData) {
-      return $http.put('/api/users/', userData);
+      return $http.put(HEROKU_URL + 'api/users/', userData);
     };
 
      // delete a user
     userFactory.delete = function() {
-      return $http.delete('/api/users/');
+      return $http.delete(HEROKU_URL + 'api/users/');
     };
 
      // return our entire userFactory object

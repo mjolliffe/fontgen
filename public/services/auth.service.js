@@ -37,7 +37,7 @@
     var currentUser;
     // handle login
     authFactory.login = function(email, password) {
-      return $http.post('/api/login', {
+      return $http.post(HEROKU_URL + 'api/login', {
         email: email,
         password: password
       })
@@ -72,7 +72,7 @@
     // get the user info
     authFactory.getUser = function(id){
       if(authToken.getToken())
-        return $http.get('/api/users/' + id, {cache: true});
+        return $http.get(HEROKU_URL + 'api/users/' + id, {cache: true});
       else
         return $q.reject({message: 'User has no token.'})
     }
@@ -91,6 +91,10 @@
     interceptorFactory.request = function(config){
       var token = authToken.getToken();
       if(token) config.headers['x-access-token'] = token;
+      console.log(config.headers)
+      if(config.ignoreCors) {
+        delete config.headers['x-access-token']
+      }
       return config;
     }
     // redirect if a token doesn't authenticate

@@ -9,6 +9,7 @@
 
   function MainController($state, userDataService, $log, authService, $scope) {
 
+
     $scope.currentUser = authService.currentUser;
     $scope.logout = authService.logout;
     $scope.isLoggedIn = authService.isLoggedIn;

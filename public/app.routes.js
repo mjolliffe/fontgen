@@ -5,9 +5,10 @@ angular
   .module('Font')
   .config(AppRoutes);
 
-AppRoutes.$inject = ["$stateProvider", "$urlRouterProvider"];
+AppRoutes.$inject = ["$stateProvider", "$urlRouterProvider", "$httpProvider"];
 
-function AppRoutes($stateProvider, $urlRouterProvider){
+function AppRoutes($stateProvider, $urlRouterProvider, $httpProvider){
+  $httpProvider.interceptors.push('authInterceptor')
 
   $stateProvider
     .state('fontgen', {
