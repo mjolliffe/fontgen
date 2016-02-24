@@ -94,9 +94,9 @@ var userCreate = function(req, res){
 ///GET USER
 
 var userShow = function(req, res){
-  User.findById(req.params.user_id, function(err, user){
-      if(err) res.send(err);
-      res.json(user);
+  User.findById(req.params.id, function(err, user){
+    if(err) res.send(err);
+    res.json(user);
   });
 }
 
@@ -123,7 +123,8 @@ var userUpdate = function(req, res){
       if (req.body.header)    user.fonts.push(req.body);
       user.save(function(err){
         if (err) res.send(err);
-        res.json({message: 'User updated!'})
+        res.json({message: 'User updated!',
+                    user: user})
       });
     });
   });

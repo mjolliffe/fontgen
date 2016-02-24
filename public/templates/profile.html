@@ -1,24 +1,17 @@
 <div class="container" ng-controller="LoginController" ng-show="isLoggedIn()">
-  <div class="col-md-12">
-  <h1>Font Pairs</h1>
-  <h2>Header: Signika</h2>
-  <h2>Paragraph: Pragati Narrow</h2>
-  </div>
   <div ng-controller="UserController">
-<!--     {{currentUser}}
-    {{user.name}}
-    {{$scope.user.name}} -->
     <div class="row">
-      <div ng-repeat="font in fonts">
+      <div>
         <ul>
-          <li>Header: <a href="https://www.google.com/fonts#UsePlace:use/Collection:{{font.header.name}}" >{{font.header.name}}</a></li>
-          <li>Paragraph: <a href="https://www.google.com/fonts#UsePlace:use/Collection:{{font.header.name}}" >{{font.paragraph.name}}</a></li>
+          <li ng-repeat="font in fonts">
+          Header:{{font.header.name}}
+          Paragraph: <a href="https://www.google.com/fonts#UsePlace:use/Collection:{{font.header.name}}">{{font.paragraph.name}}</a>
+          </li>
         </ul>
       </div>
     </div>
   </div>
 </div>
-
 <div class="container" ng-controller="LoginController" ng-hide="isLoggedIn()">
   <div class="col-md-12">
     <form class="form-inline" ng-submit="login()">

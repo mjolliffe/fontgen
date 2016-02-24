@@ -13,10 +13,11 @@
     var userFactory = {};
 
     userFactory.user = {};
+    userFactory.user.fonts = [];
 
     // get a single user
     userFactory.get = function(id) {
-      return $http.get(HEROKU_URL + 'api/users/' + id);
+      return $http.get(HEROKU_URL + 'api/users/' + id)
     };
 
      // get all users
@@ -31,8 +32,12 @@
 
      // update a user
     userFactory.update = function(userData) {
-      return $http.put(HEROKU_URL + 'api/users/', userData);
+      return $http.put(HEROKU_URL + 'api/users/', userData).then(function (data) {
+        userFactory.user.fonts.push(data.config);
+      })
     };
+
+    console.log(userFactory.user.fonts)
 
      // delete a user
     userFactory.delete = function() {
