@@ -13,7 +13,7 @@
     var userFactory = {};
 
     userFactory.user = {};
-    userFactory.user.fonts = [];
+    var userFactory.user.fonts = [];
 
     // get a single user
     userFactory.get = function(id) {
