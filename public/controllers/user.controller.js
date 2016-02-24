@@ -8,11 +8,12 @@
 
   function UserController($state, authService, userDataService, $log, $scope) {
 
-    $scope.currentUser = authService.currentUser;
-
-    $scope.createUser = createUser;
-    $scope.deleteUser = deleteUser;
-    $scope.updateUser = updateUser;
+    $scope.currentUser  = authService.currentUser;
+    $scope.createUser   = createUser;
+    $scope.deleteUser   = deleteUser;
+    $scope.updateUser   = updateUser;
+    $scope.pairs        = userDataService.pairs;
+    console.log("user controller", $scope.pairs)
 
     function createUser() {
       $scope.message = '';

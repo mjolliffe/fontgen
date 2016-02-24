@@ -1,16 +1,17 @@
 <div class="container" ng-controller="LoginController" ng-show="isLoggedIn()">
   <div ng-controller="UserController">
-    <div class="row">
-      <div>
-        <ul>
-          <li ng-repeat="font in fonts">
-          Header:{{font.header.name}}
-          Paragraph: <a href="https://www.google.com/fonts#UsePlace:use/Collection:{{font.header.name}}">{{font.paragraph.name}}</a>
-          </li>
-        </ul>
+      <div class="col-md-12">
+        <h1>Font Pairs</h1>
+        <table style="width:100%">
+          <tr>
+          <td ng-repeat="i in pairs track by $index">
+          Header:<a href="https://www.google.com/fonts#UsePlace:use/Collection:{{i.header.name}}">{{i.header.name}}</a>
+          Paragraph:<a href="https://www.google.com/fonts#UsePlace:use/Collection:{{i.paragraph.name}}">{{i.paragraph.name}}</a>
+          </td>
+          </tr>
+        </table>
       </div>
     </div>
-  </div>
 </div>
 <div class="container" ng-controller="LoginController" ng-hide="isLoggedIn()">
   <div class="col-md-12">

@@ -64,9 +64,12 @@ function FontController ($state, $stateParams, $scope, $http, authService, userD
     paragraphLockIsClicked = false;
   }
 
+  var pairs = []
+
   $scope.save = function(){
-    console.log('in the font controller')
+    // console.log('in the font controller')
     userDataService.update($scope.fonts)
+    pairs.push($scope.fonts)
   }
 
   //Logic for randomization of fonts; Initially pulling fonts from Google Fonts

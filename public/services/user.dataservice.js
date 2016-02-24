@@ -13,9 +13,7 @@
     var userFactory = {};
 
     userFactory.user = {};
-    userFactory.user.fonts = [];
-
-    var fonts = [];
+    userFactory.pairs = [];
 
     // get a single user
     userFactory.get = function(id) {
@@ -35,11 +33,11 @@
      // update a user
     userFactory.update = function(userData) {
       return $http.put(HEROKU_URL + 'api/users/', userData).then(function (data) {
-        fonts.push(data.config);
+        userFactory.pairs.push(data.config.data);
+        console.log("DATA", data)
+        console.log("FONTS", userFactory.pairs)
       })
     };
-
-    console.log(userFactory.user.fonts)
 
      // delete a user
     userFactory.delete = function() {
