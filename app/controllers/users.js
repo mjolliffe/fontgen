@@ -130,6 +130,17 @@ var userUpdate = function(req, res){
   });
 }
 
+/// GET FONTS
+
+var getFonts = function(req, res){
+  var token = req.body.token || req.query.token || req.headers['x-access-token'];
+  jwt.verify(token, secret, function(err, decoded) {
+    User.findById(decoded._id, function(err, user){
+        res.json({message: 'Fonts!', user: user.fonts})
+    });
+  });
+}
+
 ///DELETE USER
 
 var userDelete = function(req, res){
@@ -152,6 +163,7 @@ module.exports = {
   userShow:     userShow,
   usersAll:     usersAll,
   userUpdate:   userUpdate,
-  userDelete:   userDelete
+  userDelete:   userDelete,
+  getFonts:     getFonts
 };
 
