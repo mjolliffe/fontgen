@@ -45,6 +45,8 @@
           authToken.setToken(data.token);
           currentUser           = data.user;
           userDataService.user  = data.user;
+          // console.log(currentUser)
+          userDataService.getFonts(currentUser);
           return data;
           // console.log(currentUser)
           // console.log(data)

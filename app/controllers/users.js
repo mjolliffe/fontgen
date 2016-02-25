@@ -135,7 +135,7 @@ var userUpdate = function(req, res){
 var getFonts = function(req, res){
   var token = req.body.token || req.query.token || req.headers['x-access-token'];
   jwt.verify(token, secret, function(err, decoded) {
-    User.findById(decoded._id, function(err, user){
+    User.findById(decoded._id), function(err, user){
         res.json({message: 'Fonts!', user: user.fonts})
     });
   });
