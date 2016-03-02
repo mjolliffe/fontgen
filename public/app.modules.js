@@ -1,5 +1,5 @@
-// const HEROKU_URL = 'https://fontgen.herokuapp.com/';
-const HEROKU_URL = 'http://localhost:8080/';
+const HEROKU_URL = 'https://fontgen.herokuapp.com/';
+// const HEROKU_URL = 'http://localhost:8080/';
 
 (function(){
 "use strict"

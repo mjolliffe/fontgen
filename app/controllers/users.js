@@ -137,9 +137,9 @@ var getFonts = function(req, res){
   jwt.verify(token, secret, function(err, decoded) {
     User.findById(decoded._id), function(err, user){
         res.json({message: 'Fonts!', user: user.fonts})
-    });
+    }
   });
-}
+};
 
 ///DELETE USER
 

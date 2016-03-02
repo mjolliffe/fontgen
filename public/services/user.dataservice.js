@@ -33,16 +33,16 @@
      // update a user
     userFactory.update = function(userData) {
       return $http.put(HEROKU_URL + 'api/users/', userData).then(function (data) {
-        // userFactory.pairs.push(data.config.data);
-        // console.log("DATA", data)
-        // console.log("FONTS", userFactory.pairs)
       })
     };
 
     userFactory.getFonts = function(userData){
       return $http.get(HEROKU_URL + 'api/users/fonts', userData).then(function (data){
-        console.log("USER FONTS: ", data.config)
-        userFactory.pairs = data.config.data
+        console.log("FONTS: ", data.data.user)
+        userFactory.pairs = data.data.user
+        for (var i; i<userFactory.pairs.length; i++){
+          console.log(i)
+        }
       })
     }
 
