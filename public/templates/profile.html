@@ -2,16 +2,14 @@
   <div ng-controller="UserController">
       <div class="col-md-12">
         <h1>Font Pairs</h1>
-          <table style="width:100%">
-            <tr>
-            <td ng-repeat="i in pairs track by $index">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 spacer" ng-repeat="i in pairs track by $index">
             <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family={{i.header.name}}">
             <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family={{i.paragraph.name}}">
-            Header:<a href="https://www.google.com/fonts#UsePlace:use/Collection:{{i.header.name}}" style="font-family:{{i.header.name}}">{{i.header.name}}</a>
-            Paragraph:<a href="https://www.google.com/fonts#UsePlace:use/Collection:{{i.paragraph.name}}" style="font-family:{{i.header.name}}">{{i.paragraph.name}}</a>
-            </td>
-            </tr>
-          </table>
+            <p>Header:<a href="https://www.google.com/fonts#UsePlace:use/Collection:{{i.header.name}}" style="font-family:{{i.header.name}}">{{i.header.name}}</a></p>
+            <p>Paragraph:<a href="https://www.google.com/fonts#UsePlace:use/Collection:{{i.paragraph.name}}" style="font-family:{{i.paragraph.name}}">{{i.paragraph.name}}</a><p>
+            </div>
+          </div>
       </div>
     </div>
 </div>

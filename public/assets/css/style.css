@@ -31,6 +31,9 @@ a:hover {
   color: blue;
   text-decoration: none; }
 
+.spacer {
+  margin: 10px 0px; }
+
 li {
   list-style: none;
   display: inline-block; }
@@ -58,7 +61,7 @@ h1 {
 
 p {
   color: #222;
-  font-size: 1.25em; }
+  font-size: 1.5em; }
 
 .name {
   color: blue; }

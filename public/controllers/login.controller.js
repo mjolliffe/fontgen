@@ -11,6 +11,7 @@
     $scope.login        = login;
     $scope.isLoggedIn   = authService.isLoggedIn;
     $scope.currentUser  = userDataService.user;
+    $scope.pairs        = userDataService.pairs;
 
     // Form data for login
     $scope.loginData;
