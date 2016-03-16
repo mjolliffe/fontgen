@@ -36,6 +36,7 @@
       })
     };
 
+    // get user saved fonts
     userFactory.getFonts = function(userData){
       return $http.get(HEROKU_URL + 'api/users/fonts', userData).then(function (data){
         console.log("FONTS: ", data.data.user)
