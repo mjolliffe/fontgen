@@ -10,9 +10,8 @@
   function LoginController($state, userDataService, $log, authService, $scope) {
     $scope.login        = login;
     $scope.isLoggedIn   = authService.isLoggedIn;
-    $scope.currentUser  = userDataService.user;
+    // $scope.currentUser  = userDataService.user;
     $scope.pairs        = userDataService.pairs;
-
     // Form data for login
     $scope.loginData;
 
@@ -20,7 +19,7 @@
       authService.login($scope.loginData.email, $scope.loginData.password)
         .then(function(res) {
           $log.log(res.data);
-          userDataService.user = res.data.user;
+          userDataService.user  = res.data.user;
           $state.go('profile');
         });
     };
