@@ -1,7 +1,7 @@
 # FontGen
 Google Fonts Randomizer
 
-![Alt text](/public/assets/images/fontgen_screenshot.png?raw=true "Optional Title")
+![Alt text](/public/assets/images/fontgen_profiles.gif?raw=true "Optional Title")
 
 #Technologies
 - FontGen is a MEAN stack app running Mongo/Express/Node on the server side and Angular on the client side. Angular UI Router was used to perform frontend routing.
