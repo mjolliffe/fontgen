@@ -34,7 +34,7 @@
   function authService($http, $q, authToken, userDataService, $state){
     // create auth factory object
     var authFactory = {};
-    var currentUser;
+    var currentUser = false;
     // handle login
     authFactory.login = function(email, password) {
       return $http.post(HEROKU_URL + 'api/login', {
@@ -45,17 +45,15 @@
           authToken.setToken(data.token);
           currentUser           = data.user;
           userDataService.user  = data.user;
-          // console.log(currentUser)
           userDataService.getFonts(currentUser);
           return data;
-          // console.log(currentUser)
-          // console.log(data)
         });
     }
 
     // handle logout
     authFactory.logout = function(){
       authToken.setToken();
+      currentUser = false;
       $state.go('fontgen');
     }
 

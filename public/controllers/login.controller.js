@@ -20,8 +20,7 @@
         .then(function(res) {
           $log.log(res.data);
           userDataService.user  = res.data.user;
-          console.log(res.data)
-          $state.go('profile');
+          $state.go('profile', {}, {reload: true});
         });
     };
 

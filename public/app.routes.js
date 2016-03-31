@@ -29,7 +29,7 @@ function AppRoutes($stateProvider, $urlRouterProvider, $httpProvider){
       controller: 'UserController'
     })
 
-    $urlRouterProvider.otherwise('/');
+    // $urlRouterProvider.otherwise('/');
   }
 })()
 

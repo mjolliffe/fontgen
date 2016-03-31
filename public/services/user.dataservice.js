@@ -38,16 +38,14 @@
 
     // get user saved fonts
     userFactory.getFonts = function(userData){
+      console.log(HEROKU_URL + 'api/users/fonts')
       return $http.get(HEROKU_URL + 'api/users/fonts', userData).then(function (data){
         console.log("FONTS: ", data.data.user)
         userFactory.pairs = data.data.user
-        // for (var i; i<userFactory.pairs.length; i++){
-        //   console.log(i)
-        // }
       })
     }
 
-    userFactory.getFonts();
+    // userFactory.getFonts();
 
      // delete a user
     userFactory.delete = function() {

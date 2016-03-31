@@ -9,11 +9,18 @@
   function UserController($state, authService, userDataService, $log, $scope) {
 
     $scope.currentUser  = authService.currentUser;
+
+    console.log($scope.currentUser())
     $scope.createUser   = createUser;
     $scope.deleteUser   = deleteUser;
     $scope.updateUser   = updateUser;
-    $scope.pairs        = userDataService.pairs;
-    console.log("user controller", $scope.pairs)
+    $scope.userDataService = userDataService;
+    // $scope.pairs        = userDataService.pairs;
+    // console.log("user controller", $scope.pairs)
+
+    if ($scope.currentUser()) {
+      userDataService.getFonts();
+    }
 
     function createUser() {
       $scope.message = '';
@@ -44,7 +51,7 @@
           $scope.message = data.message;
           console.log($scope.message);
         });
-      $state.go('fontgen')
+      // $state.go('fontgen')
     };
   };
 })();
