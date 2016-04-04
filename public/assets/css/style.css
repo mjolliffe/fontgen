@@ -63,6 +63,9 @@ p {
   color: #222;
   font-size: 1.5em; }
 
+p #header {
+  font-size: 2em; }
+
 .name {
   color: blue; }
 
