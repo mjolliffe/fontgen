@@ -15,5 +15,5 @@ The purpose of creating this website is to help users discover font pairs throug
 Run npm install within the root folder in order to take care of all the required dependencies.
 
 #Issues/Pending Implementations
-- Small bugs: Issues with CORS when a user is logged in; User is not logged out on front end when they are deleted. Minor styling issues.
-- Pending: Include alerts/messages for the user when they successfully create, update, or delete their accounts and for when font pairs are saved. Add a "popular pairs" board which users contribute to and vote on.
+- Small bugs: User is not logged out on front end when they are deleted - CORS issue also arises when user deletd. Minor styling issues. 
+- Pending: Include alerts/messages for the user when they successfully create, update, or delete their accounts and for when font pairs are saved. Add a "popular pairs" board which users contribute to and vote on. Improve UX.
