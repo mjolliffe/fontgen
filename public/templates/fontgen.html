@@ -1,11 +1,11 @@
 <div class="container" ng-controller="FontController">
   <div class="row">
     <div class="col-md-10 col-sm-10 col-xs-10">
-      <h1><input type="text" name="" value="" placeholder="Welcome to FontGen" id="header"></h1>
+      <h1><input type="text" name="" value="" placeholder="Welcome to FontGen" id="header" autofocus></h1>
     </div>
     <div class="col-md-2 col-sm-2 col-xs-2">
       <p class="display">Header Font:</p>
-      <a href="https://www.google.com/fonts#UsePlace:use/Collection:{{fontName}}" ><p class="name">{{fontName}}</p></a>
+      <a target="_blank" href="https://www.google.com/fonts#UsePlace:use/Collection:{{fontName}}" ><p class="name">{{fontName}}</p></a>
       <button class="button lock" value="" ng-click="toggleHeader(); toggle = !toggle" ng-class="{'unlock' : toggle}">{{toggle &&'Lock' || 'Unlock'}}</button>
     </div>
   </div>
@@ -15,7 +15,7 @@
     </div>
     <div class="col-md-2 col-sm-2 col-xs-2">
       <p class="display">Paragraph Font:</p>
-      <a href="https://www.google.com/fonts#UsePlace:use/Collection:{{fontName2}}" ><p class="name">{{fontName2}}</p></a>
+      <a target="_blank" href="https://www.google.com/fonts#UsePlace:use/Collection:{{fontName2}}" ><p class="name">{{fontName2}}</p></a>
       <button class="button lock" value="" ng-click="toggleParagraph(); toggle2 = !toggle2" ng-class="{'unlock' : toggle2}">{{toggle2 &&'Lock' || 'Unlock'}}</button>
     </div>
   </div>

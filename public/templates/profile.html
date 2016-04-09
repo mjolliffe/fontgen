@@ -3,11 +3,11 @@
       <div class="col-md-12">
         <h1>Font Pairs</h1>
           <div class="row">
-            <div class="col-md-4 col-sm-12 col-xs-12 spacer" ng-repeat="i in userDataService.pairs track by $index">
+            <div class="col-md-4 col-sm-12 col-xs-12 spacer card" ng-repeat="i in userDataService.pairs track by $index">
             <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family={{i.header.name}}">
             <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family={{i.paragraph.name}}">
-            <p id="header"><a href="https://www.google.com/fonts#UsePlace:use/Collection:{{i.header.name}}" style="font-family:{{i.header.name}}">{{i.header.name}} Header</a></p>
-            <p><a href="https://www.google.com/fonts#UsePlace:use/Collection:{{i.paragraph.name}}" style="font-family:{{i.paragraph.name}}">{{i.paragraph.name}} is the name of the paragraph font.</a><p>
+            <p id="header"><a target="_blank" href="https://www.google.com/fonts#UsePlace:use/Collection:{{i.header.name}}" style="font-family:{{i.header.name}}">{{i.header.name}} Header</a></p>
+            <p><a target="_blank" href="https://www.google.com/fonts#UsePlace:use/Collection:{{i.paragraph.name}}" style="font-family:{{i.paragraph.name}}">{{i.paragraph.name}} is the name of the paragraph font.</a><p>
             </div>
           </div>
       </div>

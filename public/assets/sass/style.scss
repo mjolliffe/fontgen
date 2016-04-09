@@ -30,11 +30,7 @@ nav {
   color: white;
 }
 
-a {
-  color: blue;
-}
-
-a:hover {
+a, a:hover, a:active, a:visited {
   color: blue;
   text-decoration: none;
 }
@@ -71,6 +67,7 @@ h1 {
   color: #222;
   font-size: 1.5em;
   margin: 10px 0px;
+  line-height: 1.6em;
 }
 
 p {
@@ -84,6 +81,18 @@ p #header {
 
 .name {
   color: blue;
+  text-decoration: none;
+}
+
+.name:hover {
+  color: white;
+  background-color: blue;
+  text-decoration: none;
+}
+
+.name:active, .name:visited {
+  color: blue;
+  text-decoration: none;
 }
 
 .display {
@@ -147,6 +156,11 @@ textarea {
 .break {
   margin-top: 20px;
 }
+
+// .card {
+//   background-color: black;
+//   color: white;
+// }
 
 .button {
   text-decoration: none;
