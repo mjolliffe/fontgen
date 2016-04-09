@@ -1,8 +1,9 @@
 (function() {
   "use strict";
 
-  angular.module('Font')
-         .controller('UserController', UserController);
+  angular
+    .module('Font')
+    .controller('UserController', UserController);
 
   UserController.$inject = ['$state', 'authService', 'userDataService', '$log', '$scope'];
 
