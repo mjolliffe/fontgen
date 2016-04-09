@@ -66,10 +66,17 @@ function FontController ($state, $stateParams, $scope, $http, authService, userD
 
   var pairs = []
 
+  $scope.isLoggedIn   = authService.isLoggedIn;
+
+
   $scope.save = function(){
-    // console.log('in the font controller')
-    userDataService.update($scope.fonts)
-    pairs.push($scope.fonts)
+    // Only allows users to save fonts if they are logged in
+    if ($scope.isLoggedIn()) {
+      userDataService.update($scope.fonts)
+      pairs.push($scope.fonts)
+    } else {
+      console.log("Not logged in.")
+    }
   }
 
   //Logic for randomization of fonts; Initially pulling fonts from Google Fonts
