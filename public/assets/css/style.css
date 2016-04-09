@@ -154,7 +154,8 @@ textarea {
   background-color: blue; }
 
 .save {
-  background-color: green; }
+  background-color: green;
+  margin: 20px 0px 20px 0px; }
 
 .delete {
   background-color: red; }
@@ -178,8 +179,7 @@ textarea {
 .rw-sentence span {
   color: #222;
   white-space: nowrap;
-  font-weight: normal;
-  line-height: 1.5em; }
+  font-weight: normal; }
 
 .rw-words {
   display: inline;
