@@ -76,6 +76,7 @@ function FontController ($state, $stateParams, $scope, $http, authService, userD
       pairs.push($scope.fonts)
     } else {
       // modal should pop up saying you must be signed in to save a pair
+      // also should not be able to save unless you have generated fonts
       console.log("Not logged in.")
     }
   }
