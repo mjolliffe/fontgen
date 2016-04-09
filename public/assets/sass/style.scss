@@ -15,14 +15,25 @@ main {
   margin-top: 40px;
 }
 
+.col-md-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
 nav {
   width: 100%;
 }
 
-.nav li a {
+.nav>li {
   color: red;
-  font-size: 1.5em;
-  padding: 10px;
+  font-size: 1.35em;
+  padding: 10px 30px 10px 0px;
+}
+
+.nav>li>a {
+  color: red;
+  font-size: 1.35em;
+  padding: 10px 30px 10px 0px;
 }
 
 .nav > li > a:hover,
@@ -103,7 +114,6 @@ p #header {
 input {
   outline: none;
   border: none;
-  padding: 0px 10px;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
@@ -148,14 +158,9 @@ textarea {
   border: none;
   overflow: auto;
   outline: none;
-  padding: 0px 10px;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-}
-
-.break {
-  margin-top: 20px;
 }
 
 // .card {
@@ -167,7 +172,7 @@ textarea {
   text-decoration: none;
   border: none;
   color: white;
-  margin: 20px 0px;
+  margin: 20px 0px 20px 15px;
   font-size: 1.2em;
   display: inline-block;
   padding: 10px;

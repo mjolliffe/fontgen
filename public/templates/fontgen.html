@@ -11,7 +11,7 @@
   </div>
   <div class="row">
     <div class="col-md-10 col-sm-10 col-xs-2">
-      <textarea name="" id="paragraph" cols="30" rows="5">Header and paragraph text is editable! Just click and change. Generate new potential font combinations by clicking the “Randomize” button! Lock either the header or paragraph text if you like a font, but want to pair it with another. Sign up to save your favorite pairs.</textarea>
+      <textarea name="" id="paragraph" cols="30" rows="5">Header and paragraph text is editable! Just click and change. Create new font combinations by clicking the “Generate” button! Lock either the header or paragraph text if you like a font, but want to pair it with another. Sign up or Login to save your favorite pairs.</textarea>
     </div>
     <div class="col-md-2 col-sm-2 col-xs-2">
       <p class="display">Paragraph Font:</p>
@@ -22,7 +22,7 @@
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 break">
       <input type="button" class="button randomize" value="Generate" ng-click="randomize()">
-      <input type="button" class="button save" value="Save Pair" ng-disabled="!isLoggedIn()" ng-click="save()">
+      <input type="button" class="button save" value="Save Pair" ng-click="save()" uib-popover-html="htmlPopover" popover-trigger="mouseenter">
     </div>
   </div>
 </div>

@@ -2,9 +2,9 @@ angular
   .module('Font')
   .controller('FontController', FontController);
 
-FontController.$inject = ['$state', '$stateParams', '$scope', '$http', 'authService', 'userDataService'];
+FontController.$inject = ['$state', '$stateParams', '$scope', '$http', 'authService', 'userDataService', '$sce'];
 
-function FontController ($state, $stateParams, $scope, $http, authService, userDataService, $uibModal, $uibModalInstance, $log){
+function FontController ($state, $stateParams, $scope, $http, authService, userDataService, $sce){
 
   //Setting up variables to determine if header or paragraph stylings are locked; initially false, when "Lock" is clicked they change to true as per two following functions
   var headerLockIsClicked = false;
@@ -68,6 +68,16 @@ function FontController ($state, $stateParams, $scope, $http, authService, userD
   var pairs = []
 
   $scope.isLoggedIn   = authService.isLoggedIn;
+
+  $scope.placement = {
+    selected: 'top'
+  };
+
+  if($scope.isLoggedIn()) {
+    $scope.htmlPopover = $sce.trustAsHtml("<p id='paragraph'>Ok, let's save it!</p>");
+  } else {
+    $scope.htmlPopover = $sce.trustAsHtml("<p id='paragraph'>You must sign up and login to save pairs!</p>");
+  }
 
   $scope.save = function(){
     // Only allows users to save fonts if they are logged in
